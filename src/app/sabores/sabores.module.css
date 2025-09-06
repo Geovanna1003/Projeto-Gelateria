@@ -1,0 +1,119 @@
+.container_sabores {
+    width: 100%;
+    height: 100vh;
+    background-image: url(../../../public/banner-sabores.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.nosso_sabores {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    text-align: center;
+}
+.nosso_sabores h1 {
+    font-size: 100px;
+    color: var(--branco);
+    text-shadow: 3px 5px 2px var(--cinza-escuro);
+}
+/* <= 1080px */
+@media (max-width: 1080px) {
+  .nosso_sabores { padding: 36px 0; }
+}
+
+/* <= 1024px */
+@media (max-width: 1024px) {
+  .nosso_sabores h1 { font-size: clamp(34px, 9vw, 84px); }
+}
+
+/* <= 768px: evita problemas do 100vh no mobile */
+@media (max-width: 768px) {
+  .container_sabores {
+    height: auto;
+    min-height: 70dvh;
+    padding-top: 64px;
+    padding-bottom: 64px;
+    background-position: center;
+  }
+  .nosso_sabores h1 { text-shadow: 2px 3px 1px var(--cinza-escuro); }
+}
+
+/* <= 375px: compacto */
+@media (max-width: 375px) {
+  .nosso_sabores { padding: 48px 0; }
+  .nosso_sabores h1 { font-size: 32px; }
+}
+
+/* Página */
+
+
+/* ===== Seção dos Cards ===== */
+.saboresSecao {
+  width: 100%;
+  padding: 100px 20px;      
+}
+
+.tituloSecao {
+  text-align: center;
+  margin: 0 0 24px 0;
+}
+
+/* Container com cards: máx 1024, centralizado, gap 20 */
+.grid {
+  max-width: 1024px;        
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;                
+  justify-content: center;  
+}
+
+/* Card: 300px, padding 20, sombra, gap interno 10 */
+.card {
+  width: 300px;                        
+  padding: 20px;                        
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  gap: 10px;                            
+  background: var(--branco);
+  box-shadow: 2px 2px 15px 2px var(--cinza-claro); 
+  
+}
+
+
+.thumb {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;                  /* padroniza todas as thumbs */
+  overflow: hidden;
+                     
+}
+.cover { object-fit: cover; }
+
+/* Texto do card */
+.card h3 {
+  margin: 0;
+  font-size: 18px;                      
+  line-height: 1.3;
+  color: var(--preto);
+}
+.card p {
+  margin: 0;
+  font-size: 16px;                      
+  line-height: 1.5;
+  color: var(--cinza-escuro);
+}
+
+/* Responsivo básico (só pequenos refinamentos) */
+@media (max-width: 768px) {
+  .tituloSecao { margin-bottom: 20px; }
+  .grid { gap: 16px; }
+}
+@media (max-width: 375px) {
+  .card { width: 100%; } /* quando a tela for muito estreita */
+}

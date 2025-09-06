@@ -1,0 +1,108 @@
+/* Fundo e cor do rodapé */
+.container_rodape {
+  background: var(--preto);
+  color: var(--branco);
+}
+
+/* ===== Linha principal: LOGO | (Endereço, Contato, Horários) ===== */
+.rodape {
+  max-width: 1024px;        
+  margin: 0 auto;           
+  padding: 100px 20px;      
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  justify-content: center;  
+ 
+}
+
+.img_logo {
+  display: block;
+  height: auto;
+  flex: 0 0 100px; 
+}
+
+
+.container_enderecos {
+  width: 80%;
+  margin: 0 auto;
+  display: flex; 
+  justify-content: center;            
+  column-gap: 60px;
+  align-items: center;
+  text-align: center;
+  
+}
+
+
+/* Cada sub-container */
+.info {
+  min-height: 120px;           
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  text-align: left;
+      
+}
+
+.info h3 {
+  margin: 0 0 8px 0;
+  font-size: 18px;
+  text-transform: uppercase;
+  
+  
+}
+
+
+.container_autora small {
+  display: block;
+  max-width: 1024px;
+  margin: 0 auto;
+  text-align: center;
+
+  
+}
+/* <= 1080px: dá um respiro e evita quebra precoce */
+@media (max-width: 1080px) {
+  .container_enderecos { width: 86%; gap: 48px; }
+  .info h3 { font-size: 17px; }
+}
+
+/* <= 1024px: logo em cima, colunas continuam lado a lado */
+@media (max-width: 1024px) {
+  .rodape {
+    grid-template-columns: 1fr;   
+    justify-items: center;         
+    row-gap: 24px;
+  }
+  .img_logo { justify-self: center; }
+  .container_enderecos { width: 90%; gap: 40px; }
+}
+
+/* <= 768px: empilha as 3 colunas (100% de largura cada) */
+@media (max-width: 768px) {
+  .container_enderecos {
+    width: 100%;
+    flex-direction: column;
+    align-items: center; 
+    text-align: center;
+    gap: 16px;
+  }
+  .info {
+    min-height: auto;
+    padding: 4px 2px;
+    text-align: center;
+  }
+  .info h3 { font-size: 16px; }
+}
+
+/* <= 375px: compacto */
+@media (max-width: 375px) {
+  .rodape { padding: 80px 16px; }
+  .container_enderecos { gap: 12px; }
+  .info h3 { font-size: 15px; }
+  .info p { font-size: 14px; line-height: 1.5; }
+  .container_autora small { padding: 0 8px; }
+}
