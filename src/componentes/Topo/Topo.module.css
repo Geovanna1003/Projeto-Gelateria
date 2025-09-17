@@ -1,0 +1,29 @@
+.container_topo {
+    width: 100%;
+    max-height: 1024px;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    background-color: var(--amarelo);
+    
+    
+    
+}
+
+.link_topo {
+    display: flex;
+    gap: 40px;
+    font-size: 18px;
+    
+}
+
+.link_home,
+.link_sabores,
+.link_sobre {
+   text-decoration: none;
+   color: var(--preto);
+   font-weight: bold;
+
+}
